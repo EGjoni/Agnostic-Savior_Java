@@ -17,7 +17,8 @@ import asj.data.StringList;
 public abstract class SaveManager {
 	
 		protected HashMap<Class, JSONArray>  classes = new HashMap<>();
-		WeakHashMap<Saveable, Boolean> saveables = new WeakHashMap<Saveable, Boolean>();
+		protected WeakHashMap<Saveable, Boolean> saveables = new WeakHashMap<Saveable, Boolean>();
+		protected WeakHashMap<Saveable, Boolean> amSaving = new WeakHashMap<Saveable, Boolean>();
 	
 		public void registerSaveableClass(Class c) throws ClassNotSaveableException {
 			if(!Saveable.class.isAssignableFrom(c)) {
